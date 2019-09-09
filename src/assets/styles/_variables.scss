@@ -1,0 +1,13 @@
+// use css custom properties for colors
+:root {
+  --green: #b8fb3c;
+  --teal: #5ce5d5;
+  --blue: #7898fb;
+  --dark: #001437;
+}
+
+// sass variables for media queries
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
