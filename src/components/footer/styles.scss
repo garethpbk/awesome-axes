@@ -1,0 +1,21 @@
+@import '../../assets/styles/variables';
+
+footer {
+  background-color: var(--dark);
+
+  height: 100px;
+
+  box-shadow: 0 -2px 1px -1px #ffffff, 0 -4px 2px -2px var(--green);
+
+  p {
+    color: #fff;
+    font-family: 'Rock Salt', Arial, Helvetica, sans-serif;
+  }
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+
+  height: 100%;
+}

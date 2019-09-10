@@ -9,7 +9,7 @@ function isCurrent(current, i) {
 }
 
 function Carousel({ guitars, setHeaderHeight }) {
-  const [current, setCurrent] = useState(1);
+  const [current, setCurrent] = useState(2);
   const [transitionLength, setTransitionLength] = useState('0.25s');
 
   useEffect(() => {
@@ -17,16 +17,22 @@ function Carousel({ guitars, setHeaderHeight }) {
   }, [setHeaderHeight]);
 
   // add a clone of first and last slides for seamless transition from first to last or last to first slide
-  const slidesWithClones = [guitars[guitars.length - 1], ...guitars, guitars[0]];
+  const slidesWithClones = [
+    guitars[guitars.length - 2],
+    guitars[guitars.length - 1],
+    ...guitars,
+    guitars[0],
+    guitars[1],
+  ];
 
   const advanceSlide = () => {
     setCurrent(current => current + 1);
     setTransitionLength('0.25s');
 
-    if (current === slidesWithClones.length - 2) {
+    if (current === slidesWithClones.length - 3) {
       setTimeout(() => {
         setTransitionLength('0s');
-        setCurrent(1);
+        setCurrent(2);
       }, 250);
     }
   };
@@ -35,10 +41,10 @@ function Carousel({ guitars, setHeaderHeight }) {
     setCurrent(current => current - 1);
     setTransitionLength('0.25s');
 
-    if (current === 1) {
+    if (current === 2) {
       setTimeout(() => {
         setTransitionLength('0s');
-        setCurrent(guitars.length);
+        setCurrent(guitars.length + 1);
       }, 250);
     }
   };
@@ -50,15 +56,13 @@ function Carousel({ guitars, setHeaderHeight }) {
 
   return (
     <div className="carousel-outer">
-      <span className="carousel-control left" onClick={reverseSlide}>
-        ‹
-      </span>
+      <span className="carousel-control left" onClick={reverseSlide} />
       <section className="carousel-wrapper">
         <ul
           className="carousel-content"
           style={{
             transition: `transform ${transitionLength} ease-in-out`,
-            transform: `translateX(${current * -100}%)`,
+            transform: `translateX(${current * -25 + (current - 1) * -25}%)`,
           }}
         >
           {slidesWithClones.map((slide, i) => (
@@ -74,18 +78,17 @@ function Carousel({ guitars, setHeaderHeight }) {
           ))}
         </ul>
       </section>
-      <span className="carousel-control right" onClick={advanceSlide}>
-        ›
-      </span>
+      <span className="carousel-control right" onClick={advanceSlide} />
       <div className="carousel-select">
         {guitars.map((slide, i) => (
           <span
             key={`slide-control-${i}`}
-            className={`carousel-selector${isCurrent(current, i + 1)}`}
-            onClick={() => changeSlide(i + 1)}
+            className={`carousel-selector${isCurrent(current, i + 2)}`}
+            onClick={() => changeSlide(i + 2)}
           />
         ))}
       </div>
+      <p>{current}</p>
       <div className="carousel-controls-mobile">
         <span className="carousel-control" onClick={reverseSlide}>
           ‹

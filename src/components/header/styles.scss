@@ -36,7 +36,7 @@
 
   transition: all 0.15s linear;
 
-  box-shadow: 0 2px 1px -1px #ffffff, 0 4px 2px -2px var(--green);
+  box-shadow: 0 2px 1px -1px #fff, 0 4px 2px -2px var(--green);
 
   &.header-full {
     height: 400px;
@@ -69,6 +69,6 @@
     height: 100%;
     width: 100%;
 
-    opacity: 0.1;
+    opacity: 0.5;
   }
 }

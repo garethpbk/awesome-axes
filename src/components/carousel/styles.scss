@@ -8,7 +8,7 @@
 }
 
 .carousel-outer {
-  width: 90%;
+  width: 100%;
 
   margin: 0 auto;
 }
@@ -23,7 +23,6 @@
 .carousel-content,
 .carousel-slide {
   height: 100%;
-  width: 100%;
 
   transform-style: preserve-3d;
 }
@@ -32,6 +31,8 @@
   margin: 0;
   padding: 0;
 
+  width: 100%;
+
   white-space: nowrap;
 }
 
@@ -39,11 +40,17 @@
   color: white;
   font-size: 5rem;
 
+  width: 50%;
+
   display: inline-block;
 
-  transition: all 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out;
 
   overflow: hidden;
+
+  &:not(.current) {
+    filter: saturate(10%);
+  }
 
   &:hover {
     .carousel-slide-overlay {
@@ -128,25 +135,46 @@
   display: none;
 
   @media (min-width: $xl) {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--dark);
 
     color: #fff;
+    font-size: 4rem;
 
-    font-size: 10rem;
+    border-radius: 50%;
+
+    height: 50px;
+    width: 50px;
+
+    position: absolute;
+    top: 25%;
+    z-index: 10;
 
     &:hover {
       color: var(--green);
     }
 
-    position: absolute;
-    top: 35%;
-
     &.left {
-      left: -75px;
+      left: 25px;
+
+      &:before {
+        content: '\00ab';
+
+        margin: 0 3px 5px 0;
+      }
     }
 
     &.right {
-      right: -75px;
+      right: 25px;
+
+      &:before {
+        content: '\00bb';
+
+        margin: 0 0 5px 3px;
+      }
     }
   }
 }

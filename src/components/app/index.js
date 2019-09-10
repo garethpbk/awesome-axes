@@ -7,6 +7,7 @@ import guitars from '../../data/guitars';
 
 // import components
 import Carousel from '../carousel';
+import Footer from '../footer';
 import Guitar from '../guitar';
 import Header from '../header';
 
@@ -17,13 +18,12 @@ function App() {
     <div>
       <Header headerHeight={headerHeight} />
       <main>
-        <div className="container">
-          <Router>
-            <Carousel guitars={guitars} setHeaderHeight={setHeaderHeight} path="/" />
-            <Guitar guitars={guitars} setHeaderHeight={setHeaderHeight} path="/guitars/:name" />
-          </Router>
-        </div>
+        <Router>
+          <Carousel guitars={guitars} setHeaderHeight={setHeaderHeight} path="/" />
+          <Guitar guitars={guitars} setHeaderHeight={setHeaderHeight} path="/guitars/:name" />
+        </Router>
       </main>
+      <Footer />
     </div>
   );
 }
