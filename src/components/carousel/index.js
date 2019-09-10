@@ -1,15 +1,28 @@
 import React, { useState } from 'react';
 import './styles.scss';
 
-const slides = ['red', 'blue', 'green', 'coral'];
+// import slide assets
+import slide0 from '../../assets/images/slides/slide-0.jpg';
+import slide1 from '../../assets/images/slides/slide-1.jpg';
+import slide2 from '../../assets/images/slides/slide-2.jpg';
+
+const slides = [
+  {
+    image: slide0,
+    name: 'Acoustic Guitar',
+    description: 'Play some nice chords on this wooden thing.',
+  },
+  { image: slide1, name: 'Pretty Guitar', description: "It's so nice to look at!" },
+  { image: slide2, name: 'Cool Red Guitar', description: 'Better buy an amp with this one.' },
+];
 
 // add a clone of first and last slides for seamless transition from first to last or last to first slide
 const slidesWithClones = [slides[slides.length - 1], ...slides, slides[0]];
 
-function getClassName(current, i) {
-  if (current === i) return 'carousel-slide current';
+function isCurrent(current, i) {
+  if (current === i) return ' current';
 
-  return 'carousel-slide';
+  return '';
 }
 
 function Carousel() {
@@ -40,8 +53,16 @@ function Carousel() {
     }
   };
 
+  const changeSlide = i => {
+    setCurrent(i);
+    setTransitionLength('0.25s');
+  };
+
   return (
-    <>
+    <div className="carousel-outer">
+      <span className="carousel-control left" onClick={reverseSlide}>
+        ‹
+      </span>
       <section className="carousel-wrapper">
         <ul
           className="carousel-content"
@@ -51,21 +72,37 @@ function Carousel() {
           }}
         >
           {slidesWithClones.map((slide, i) => (
-            <li key={`slide-${i}`} id={slide} className={getClassName(current, i)}>
-              {i}
+            <li key={`slide-${i}`} className={`carousel-slide${isCurrent(current, i)}`}>
+              <img src={slide.image} alt={slide.name} />
+              <div className="carousel-slide-overlay">
+                <h2>{slide.name}</h2>
+                <p>{slide.description}</p>
+              </div>
             </li>
           ))}
         </ul>
       </section>
-      {slides.map((slide, i) => (
-        <span key={`slide-control-${i}`} className="carousel-selector" onClick={() => setCurrent(i)}>
-          {i + 1}
+      <span className="carousel-control right" onClick={advanceSlide}>
+        ›
+      </span>
+      <div className="carousel-select">
+        {slides.map((slide, i) => (
+          <span
+            key={`slide-control-${i}`}
+            className={`carousel-selector${isCurrent(current, i + 1)}`}
+            onClick={() => changeSlide(i + 1)}
+          />
+        ))}
+      </div>
+      <div className="carousel-controls-mobile">
+        <span className="carousel-control" onClick={reverseSlide}>
+          ‹
         </span>
-      ))}
-      <br />
-      <button onClick={reverseSlide}>Previous</button>
-      <button onClick={advanceSlide}>Next</button>
-    </>
+        <span className="carousel-control" onClick={advanceSlide}>
+          ›
+        </span>
+      </div>
+    </div>
   );
 }
 

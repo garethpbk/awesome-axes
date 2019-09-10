@@ -15,7 +15,7 @@
     width: 976px;
   }
 
-  @media (min-width: xl) {
+  @media (min-width: $xl) {
     width: 1184px;
   }
 }
