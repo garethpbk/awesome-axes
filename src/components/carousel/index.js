@@ -1,23 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from '@reach/router';
 import './styles.scss';
-
-// import slide assets
-import slide0 from '../../assets/images/slides/slide-0.jpg';
-import slide1 from '../../assets/images/slides/slide-1.jpg';
-import slide2 from '../../assets/images/slides/slide-2.jpg';
-
-const slides = [
-  {
-    image: slide0,
-    name: 'Acoustic Guitar',
-    description: 'Play some nice chords on this wooden thing.',
-  },
-  { image: slide1, name: 'Pretty Guitar', description: "It's so nice to look at!" },
-  { image: slide2, name: 'Cool Red Guitar', description: 'Better buy an amp with this one.' },
-];
-
-// add a clone of first and last slides for seamless transition from first to last or last to first slide
-const slidesWithClones = [slides[slides.length - 1], ...slides, slides[0]];
 
 function isCurrent(current, i) {
   if (current === i) return ' current';
@@ -25,9 +8,16 @@ function isCurrent(current, i) {
   return '';
 }
 
-function Carousel() {
+function Carousel({ guitars, setHeaderHeight }) {
   const [current, setCurrent] = useState(1);
   const [transitionLength, setTransitionLength] = useState('0.25s');
+
+  useEffect(() => {
+    setHeaderHeight('header-full');
+  }, [setHeaderHeight]);
+
+  // add a clone of first and last slides for seamless transition from first to last or last to first slide
+  const slidesWithClones = [guitars[guitars.length - 1], ...guitars, guitars[0]];
 
   const advanceSlide = () => {
     setCurrent(current => current + 1);
@@ -48,7 +38,7 @@ function Carousel() {
     if (current === 1) {
       setTimeout(() => {
         setTransitionLength('0s');
-        setCurrent(slides.length);
+        setCurrent(guitars.length);
       }, 250);
     }
   };
@@ -73,11 +63,13 @@ function Carousel() {
         >
           {slidesWithClones.map((slide, i) => (
             <li key={`slide-${i}`} className={`carousel-slide${isCurrent(current, i)}`}>
-              <img src={slide.image} alt={slide.name} />
-              <div className="carousel-slide-overlay">
-                <h2>{slide.name}</h2>
-                <p>{slide.description}</p>
-              </div>
+              <Link to={`guitars/${slide.name.toLowerCase().replace(/ /g, '-')}`}>
+                <img src={slide.image} alt={slide.name} />
+                <div className="carousel-slide-overlay">
+                  <h2>{slide.name}</h2>
+                  <p>{slide.description}</p>
+                </div>
+              </Link>
             </li>
           ))}
         </ul>
@@ -86,7 +78,7 @@ function Carousel() {
         ›
       </span>
       <div className="carousel-select">
-        {slides.map((slide, i) => (
+        {guitars.map((slide, i) => (
           <span
             key={`slide-control-${i}`}
             className={`carousel-selector${isCurrent(current, i + 1)}`}

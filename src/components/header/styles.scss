@@ -30,8 +30,6 @@
 .header-wrapper {
   background-color: var(--dark);
 
-  height: 400px;
-
   margin: 0 0 50px 0;
 
   position: relative;
@@ -39,6 +37,18 @@
   transition: all 0.15s linear;
 
   box-shadow: 0 2px 1px -1px #ffffff, 0 4px 2px -2px var(--green);
+
+  &.header-full {
+    height: 400px;
+  }
+
+  &.header-short {
+    height: 100px;
+
+    p {
+      display: none;
+    }
+  }
 
   &:before {
     background-image: url('../../assets/images/header-background.jpg');

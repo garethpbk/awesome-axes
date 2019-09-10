@@ -1,0 +1,13 @@
+[
+  {
+    "image": "/images/slide-0.jpg",
+    "name": "Acoustic Guitar",
+    "description": "Play some nice chords on this wooden thing."
+  },
+  { "image": "/images/slide-1.jpg", "name": "Pretty Guitar", "description": "It's so nice to look at!" },
+  {
+    "image": "/images/slide-2.jpg",
+    "name": "Cool Red Guitar",
+    "description": "Better buy an amp with this one."
+  }
+]
