@@ -207,13 +207,17 @@
   height: 15px;
   width: 15px;
 
+  padding: 10px;
+
   color: white;
 
   display: inline-block;
 
   margin: 0 25px;
 
-  transition: background-color 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+
+  transform: rotate(45deg);
 
   @media (min-width: $lg) {
     margin: 0 50px;
@@ -224,11 +228,19 @@
 
   &:hover {
     background-color: var(--green);
+
+    transform: rotate(405deg);
   }
 
   &.current {
     background-color: var(--green);
 
     opacity: 1;
+  }
+
+  svg {
+    path {
+      fill: var(--dark);
+    }
   }
 }

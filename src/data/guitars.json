@@ -2,12 +2,25 @@
   {
     "image": "/images/slide-0.jpg",
     "name": "Acoustic Guitar",
-    "description": "Play some nice chords on this wooden thing."
+    "description": "Play some nice chords on this wooden thing.",
+    "icon": "acousticGuitarIcon"
   },
-  { "image": "/images/slide-1.jpg", "name": "Pretty Guitar", "description": "It's so nice to look at!" },
+  {
+    "image": "/images/slide-3.jpg",
+    "name": "Marshall Amp",
+    "description": "Wait a second, that's not a guitar!",
+    "icon": "amplifierIcon"
+  },
+  {
+    "image": "/images/slide-1.jpg",
+    "name": "Pretty Guitar",
+    "description": "It's so nice to look at!",
+    "icon": "acousticGuitarIcon"
+  },
   {
     "image": "/images/slide-2.jpg",
     "name": "Cool Red Guitar",
-    "description": "Better buy an amp with this one."
+    "description": "Better buy an amp with this one.",
+    "icon": "electricGuitarIcon"
   }
 ]

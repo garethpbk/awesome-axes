@@ -2,6 +2,17 @@ import React, { useEffect, useState } from 'react';
 import { Link } from '@reach/router';
 import './styles.scss';
 
+// import icons
+import { ReactComponent as AcousticGuitarIcon } from '../../assets/images/svg/acoustic-guitar-icon.svg';
+import { ReactComponent as AmplifierIcon } from '../../assets/images/svg/amplifier-icon.svg';
+import { ReactComponent as ElectricGuitarIcon } from '../../assets/images/svg/electric-guitar-icon.svg';
+
+const icons = {
+  acousticGuitarIcon: <AcousticGuitarIcon />,
+  amplifierIcon: <AmplifierIcon />,
+  electricGuitarIcon: <ElectricGuitarIcon />,
+};
+
 function isCurrent(current, i) {
   if (current === i) return ' current';
 
@@ -85,7 +96,9 @@ function Carousel({ guitars, setHeaderHeight }) {
             key={`slide-control-${i}`}
             className={`carousel-selector${isCurrent(current, i + 2)}`}
             onClick={() => changeSlide(i + 2)}
-          />
+          >
+            {icons[slide.icon]}
+          </span>
         ))}
       </div>
     </div>
