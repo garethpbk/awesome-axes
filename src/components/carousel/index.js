@@ -88,15 +88,6 @@ function Carousel({ guitars, setHeaderHeight }) {
           />
         ))}
       </div>
-      <p>{current}</p>
-      <div className="carousel-controls-mobile">
-        <span className="carousel-control" onClick={reverseSlide}>
-          ‹
-        </span>
-        <span className="carousel-control" onClick={advanceSlide}>
-          ›
-        </span>
-      </div>
     </div>
   );
 }
