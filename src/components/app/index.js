@@ -8,13 +8,14 @@ import guitars from '../../data/guitars';
 // import components
 import Carousel from '../carousel';
 import Footer from '../footer';
+import FourOhFour from '../fourOhFour';
 import Guitar from '../guitar';
 import Guitars from '../guitars';
 import Header from '../header';
 
 // fix for Reach router scrolling down the page on route changes
 const ScrollToTop = ({ children, location }) => {
-  React.useLayoutEffect(() => window.scrollTo(0, 0), [location.pathname]);
+  useLayoutEffect(() => window.scrollTo(0, 0), [location.pathname]);
   return children;
 };
 
@@ -31,6 +32,7 @@ function App() {
               <Carousel guitars={guitars} setHeaderHeight={setHeaderHeight} path="/" />
               <Guitar guitars={guitars} setHeaderHeight={setHeaderHeight} path="/guitars/:name" />
               <Guitars guitars={guitars} setHeaderHeight={setHeaderHeight} path="/guitars" />
+              <FourOhFour path="/404" default />
             </ScrollToTop>
           </Router>
         </main>
