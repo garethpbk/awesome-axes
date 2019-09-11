@@ -86,6 +86,7 @@
 
 .carousel-select {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 
@@ -108,7 +109,7 @@
 
   display: inline-block;
 
-  margin: 0 25px;
+  margin: 10px 25px 0 25px;
 
   transition: all 0.25s ease-in-out;
 
