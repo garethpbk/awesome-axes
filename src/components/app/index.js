@@ -15,14 +15,16 @@ function App() {
   const [headerHeight, setHeaderHeight] = useState('header-full');
 
   return (
-    <div>
-      <Header headerHeight={headerHeight} />
-      <main>
-        <Router>
-          <Carousel guitars={guitars} setHeaderHeight={setHeaderHeight} path="/" />
-          <Guitar guitars={guitars} setHeaderHeight={setHeaderHeight} path="/guitars/:name" />
-        </Router>
-      </main>
+    <div className="app-wrapper">
+      <div className="app-content">
+        <Header headerHeight={headerHeight} />
+        <main>
+          <Router>
+            <Carousel guitars={guitars} setHeaderHeight={setHeaderHeight} path="/" />
+            <Guitar guitars={guitars} setHeaderHeight={setHeaderHeight} path="/guitars/:name" />
+          </Router>
+        </main>
+      </div>
       <Footer />
     </div>
   );

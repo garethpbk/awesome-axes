@@ -20,6 +20,7 @@ function isCurrent(current, i) {
 }
 
 function Carousel({ guitars, setHeaderHeight }) {
+  // start at index 2 of the cloned slides as the first two are copies
   const [current, setCurrent] = useState(2);
   const [transitionLength, setTransitionLength] = useState('0.25s');
 
@@ -27,7 +28,7 @@ function Carousel({ guitars, setHeaderHeight }) {
     setHeaderHeight('header-full');
   }, [setHeaderHeight]);
 
-  // add a clone of first and last slides for seamless transition from first to last or last to first slide
+  // add a clone of first 2 and last 2 slides for seamless transition from first to last or last to first slide
   const slidesWithClones = [
     guitars[guitars.length - 2],
     guitars[guitars.length - 1],
@@ -40,6 +41,7 @@ function Carousel({ guitars, setHeaderHeight }) {
     setCurrent(current => current + 1);
     setTransitionLength('0.25s');
 
+    // if on last slide, go to the clone of the first slide, then do a "hidden transition" back to actual first slide
     if (current === slidesWithClones.length - 3) {
       setTimeout(() => {
         setTransitionLength('0s');
@@ -52,6 +54,7 @@ function Carousel({ guitars, setHeaderHeight }) {
     setCurrent(current => current - 1);
     setTransitionLength('0.25s');
 
+    // if on first slide, go to the clone of the last slide, then do a "hidden transition" back to actual last slide
     if (current === 2) {
       setTimeout(() => {
         setTransitionLength('0s');
