@@ -16,11 +16,11 @@ Netlify is a good choice. Is deployed at [https://awesome-axes.netlify.com/](htt
 
 ## Acknowledgements
 
-- Acoustic and electric guitar icons from The Noun Project, created by buheicon
+- Acoustic and electric guitar svg icons from The Noun Project, created by buheicon
 
-- Acoustic and electric guitar icons from The Noun Project, created by Yo! Baba
+- Amplifier svg icon from The Noun Project, created by Yo! Baba
 
-- Github icon from Github
+- Github svg icon from Github
 
 - All images of guitars & amp from Google search set to "use for commercial re-use with modification." Modified by the author with the magic of Photoshop.
 
