@@ -22,9 +22,11 @@
     filter: saturate(10%);
   }
 
-  &:hover {
-    .carousel-slide-overlay {
-      bottom: 0px;
+  &.current {
+    &:hover {
+      .carousel-slide-overlay {
+        bottom: 0px;
+      }
     }
   }
 
