@@ -19,7 +19,7 @@ function App() {
       <div className="app-content">
         <Header headerHeight={headerHeight} />
         <main>
-          <Router>
+          <Router primary={false}>
             <Carousel guitars={guitars} setHeaderHeight={setHeaderHeight} path="/" />
             <Guitar guitars={guitars} setHeaderHeight={setHeaderHeight} path="/guitars/:name" />
           </Router>

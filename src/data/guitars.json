@@ -1,26 +1,30 @@
 [
   {
-    "image": "/images/slide-0.jpg",
+    "image": "/guitars/acoustic-guitar/acoustic-guitar.jpg",
     "name": "Acoustic Guitar",
     "description": "Play some nice chords on this wooden thing.",
-    "icon": "acousticGuitarIcon"
+    "icon": "acousticGuitarIcon",
+    "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec felis nisl. In vulputate purus sit amet quam pharetra mattis. Phasellus viverra dignissim aliquet. Curabitur a nunc a lacus maximus imperdiet. Suspendisse vitae tellus a nulla tempor congue. Morbi eget faucibus nibh. Proin et iaculis quam, ac aliquam sem. Vivamus auctor odio ut velit feugiat finibus. Aliquam luctus vestibulum leo sit amet posuere. Praesent hendrerit facilisis ante, in laoreet lacus imperdiet quis. Vivamus at erat libero. Quisque lacinia ligula vitae dictum finibus. Nunc tempus dui vel augue blandit, in tempus est ultricies. Pellentesque mi lorem, facilisis ac gravida sed, venenatis eget massa.</p><p>Pellentesque ut blandit orci. Sed eu vestibulum arcu. Nulla placerat tempus libero. Fusce ex nulla, auctor et iaculis non, fringilla sed urna. Vestibulum pharetra ex mauris, quis fringilla diam lacinia vel. Sed ullamcorper, elit in pulvinar lobortis, ante turpis efficitur nibh, id vulputate metus nunc ut felis. Maecenas dolor sem, pulvinar vitae elementum vel, finibus eget magna. Pellentesque id ultrices magna, ac cursus arcu. Ut quis mi vel arcu molestie vulputate. Phasellus auctor id libero lobortis convallis.</p>"
   },
   {
-    "image": "/images/slide-3.jpg",
+    "image": "/guitars/amplifier/amplifier.jpg",
     "name": "Marshall Amp",
     "description": "Wait a second, that's not a guitar!",
-    "icon": "amplifierIcon"
+    "icon": "amplifierIcon",
+    "text": "<p>Vestibulum ullamcorper, justo vel convallis vestibulum, mauris urna dapibus risus, vitae laoreet elit ligula eu sapien. Suspendisse potenti. Donec consectetur ultricies arcu at fermentum. Morbi efficitur ligula quis nibh pulvinar malesuada. Praesent aliquet in urna venenatis euismod. Pellentesque viverra dignissim quam, eget mollis urna. Vestibulum neque ligula, accumsan nec congue scelerisque, consequat in lectus. Fusce quis bibendum enim.</p><p>Nulla faucibus justo nec suscipit commodo. Pellentesque tempor, odio eu consequat commodo, tellus tortor fermentum ligula, at scelerisque est urna eget neque. Quisque nec mi malesuada, gravida odio et, fermentum mauris. Sed finibus mi non vulputate bibendum. Aliquam fringilla felis felis, convallis cursus lorem consectetur in. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce enim enim, dictum eu mi id, fringilla bibendum eros. Mauris diam diam, efficitur ac neque vitae, elementum dignissim lorem. Curabitur quis felis vehicula, sollicitudin justo eu, mattis justo. Vestibulum in facilisis nibh, eu lobortis erat. Ut nisl nunc, ultricies non placerat ac, imperdiet ac ipsum. Vestibulum quis rhoncus tortor, et faucibus metus. Ut est tellus, consectetur at sapien at, commodo sagittis ante.</p>"
   },
   {
-    "image": "/images/slide-1.jpg",
+    "image": "/guitars/pretty-guitar/pretty-guitar.jpg",
     "name": "Pretty Guitar",
     "description": "It's so nice to look at!",
-    "icon": "acousticGuitarIcon"
+    "icon": "acousticGuitarIcon",
+    "text": "<p>Sed elementum, justo euismod pharetra accumsan, justo risus congue enim, ac scelerisque elit lectus a nibh. Curabitur posuere malesuada magna, id placerat tortor tincidunt vitae. Donec vestibulum elit in nisi vestibulum mattis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin nec blandit turpis. Pellentesque eros nisl, molestie vel massa eget, molestie cursus sem. Duis maximus tincidunt mauris nec tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sagittis dictum nisl, ornare dignissim purus egestas eget. Pellentesque ut augue nec lectus lobortis bibendum. Duis fringilla lacus non nisl dapibus fermentum. Morbi faucibus, dolor eu accumsan aliquam, eros felis molestie orci, quis mattis tellus metus nec mi. Donec id est eget ante porttitor laoreet. Proin eget erat ac erat vestibulum commodo et vitae ante. Suspendisse fringilla, nisl in eleifend commodo, turpis nisi iaculis elit, in dapibus augue ligula non enim. In ultrices, augue at congue dictum, urna risus mollis purus, sed consectetur metus magna eget lorem.</p><p>Nulla varius augue lacus, nec vehicula eros blandit a. Vivamus eu viverra erat, id facilisis nisl. Sed luctus dignissim hendrerit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam venenatis posuere elit nec placerat. Integer tincidunt nibh in massa molestie pretium. Suspendisse vitae elit euismod, dictum augue quis, imperdiet ante. Curabitur at dolor arcu. Suspendisse at tristique mi, vel ultricies felis. Pellentesque rutrum orci sit amet velit pretium consequat. Proin a dui nisl. Phasellus eleifend nisi id gravida accumsan.</p>"
   },
   {
-    "image": "/images/slide-2.jpg",
+    "image": "/guitars/electric-guitar/electric-guitar.jpg",
     "name": "Cool Red Guitar",
     "description": "Better buy an amp with this one.",
-    "icon": "electricGuitarIcon"
+    "icon": "electricGuitarIcon",
+    "text": "<p>Vestibulum posuere placerat hendrerit. Etiam nunc nisl, semper sit amet erat quis, malesuada luctus nunc. Aliquam at dignissim ex. Quisque at ullamcorper purus. Sed euismod sapien eros, et porta lorem rhoncus sodales. Aliquam tristique ipsum nec placerat dapibus. Fusce sed fermentum quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc gravida lectus finibus felis dapibus, vel feugiat felis tincidunt. Fusce sed nisi sed turpis eleifend lacinia. Morbi eros odio, interdum ultricies risus a, sollicitudin auctor mauris. Nulla venenatis orci non lacus eleifend, quis consectetur leo porta. Donec elementum eros vel purus ultrices auctor. Cras rhoncus mauris cursus, aliquet orci non, viverra ipsum. Donec fringilla augue nisi, id imperdiet eros rhoncus sit amet.</p><p>Nulla eu nisi erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas porttitor sodales quam, vitae mattis augue fringilla vel. Nulla fringilla enim mattis lectus sagittis, vel sodales massa aliquet. Sed ac erat eu mi euismod viverra. Fusce nec est sit amet elit hendrerit scelerisque. Phasellus pellentesque ex sed risus interdum, eu aliquet ex aliquam. Praesent et ex at enim hendrerit pellentesque. Suspendisse ac mattis massa. Aliquam at pulvinar ex. Aliquam maximus quis ex sed tempor. Phasellus nulla felis, molestie et euismod ac, tristique euismod nisi. Fusce sodales lorem sed dolor ultrices gravida. Aliquam mauris nisl, tempus eget dignissim in, mollis a dui.</p>"
   }
 ]
