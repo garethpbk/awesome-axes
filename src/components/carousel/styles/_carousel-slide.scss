@@ -28,6 +28,11 @@
     }
   }
 
+  // make sure the element has some visible indication of focus (targets the anchor tag inside the list item)
+  &:focus-within {
+    outline: 5px solid var(--green);
+  }
+
   a {
     display: block;
 

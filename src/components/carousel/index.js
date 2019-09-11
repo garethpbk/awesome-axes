@@ -5,6 +5,9 @@ import './styles/main.scss';
 // import hooks
 import useSetTitle from '../../hooks/useSetTitle';
 
+// import functions
+import triggerOnEnter from '../../util/triggerOnEnter';
+
 // import components
 import CarouselSelect from './CarouselSelect';
 import CarouselSlide from './CarouselSlide';
@@ -28,11 +31,11 @@ function Carousel({ guitars, setHeaderHeight }) {
 
   // add a clone of first 2 and last 2 slides for seamless transition from first to last or last to first slide
   const slidesWithClones = [
-    guitars[guitars.length - 2],
-    guitars[guitars.length - 1],
+    { ...guitars[guitars.length - 2], clone: true },
+    { ...guitars[guitars.length - 1], clone: true },
     ...guitars,
-    guitars[0],
-    guitars[1],
+    { ...guitars[0], clone: true },
+    { ...guitars[1], clone: true },
   ];
 
   const advanceSlide = () => {
@@ -68,7 +71,12 @@ function Carousel({ guitars, setHeaderHeight }) {
 
   return (
     <div className="carousel-outer">
-      <span className="carousel-control left" onClick={reverseSlide} />
+      <span
+        className="carousel-control left"
+        onClick={reverseSlide}
+        onKeyDown={e => triggerOnEnter(e.key, reverseSlide)}
+        tabIndex="0"
+      />
       <section className="carousel-wrapper">
         <ul
           className="carousel-content"
@@ -82,7 +90,12 @@ function Carousel({ guitars, setHeaderHeight }) {
           ))}
         </ul>
       </section>
-      <span className="carousel-control right" onClick={advanceSlide} />
+      <span
+        className="carousel-control right"
+        onClick={advanceSlide}
+        onKeyDown={e => triggerOnEnter(e.key, advanceSlide)}
+        tabIndex="0"
+      />
       <CarouselSelect changeSlide={changeSlide} current={current} guitars={guitars} isCurrent={isCurrent} />
       <div className="carousel-guitars-link">
         <Link to="/guitars">
