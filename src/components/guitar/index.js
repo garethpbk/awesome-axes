@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, useState } from 'react';
 import { Link } from '@reach/router';
-import './styles.scss';
+import './styles/main.scss';
 
 // import components
 import GuitarGallery from './GuitarGallery';

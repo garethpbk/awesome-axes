@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './styles.scss';
+import './styles/main.scss';
 
 // import components
 import CarouselSelect from './CarouselSelect';

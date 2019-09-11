@@ -1,0 +1,35 @@
+@import '../../../assets/styles/variables';
+
+.carousel-outer,
+.carousel-wrapper,
+.carousel-content {
+  position: relative;
+}
+
+.carousel-outer {
+  width: 100%;
+
+  margin: 0 auto;
+}
+
+.carousel-wrapper {
+  height: 100%;
+  width: 100%;
+
+  overflow: hidden;
+}
+
+.carousel-content {
+  height: 100%;
+
+  transform-style: preserve-3d;
+}
+
+.carousel-content {
+  margin: 0;
+  padding: 0;
+
+  width: 100%;
+
+  white-space: nowrap;
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.scss';
+import './styles/main.scss';
 
 function GuitarGallery({ activeImage, gallery, name, setActiveImage }) {
   return (

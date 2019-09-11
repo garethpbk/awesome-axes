@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from '@reach/router';
-import './styles.scss';
+import './styles/main.scss';
 
 function CarouselSlide({ current, i, isCurrent, slide: { description, gallery, name } }) {
   return (

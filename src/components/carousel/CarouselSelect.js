@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.scss';
+import './styles/main.scss';
 
 // import icons
 import { ReactComponent as AcousticGuitarIcon } from '../../assets/images/svg/acoustic-guitar-icon.svg';

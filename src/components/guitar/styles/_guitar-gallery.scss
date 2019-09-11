@@ -1,40 +1,4 @@
-@import '../../assets/styles/variables';
-
-.guitar-wrapper {
-  padding: 25px 0;
-}
-
-.guitar-crumbs {
-  display: block;
-
-  padding: 0 0 25px 0;
-
-  a {
-    color: var(--dark);
-  }
-}
-
-.guitar-title {
-  display: inline-block;
-
-  margin: 25px 0 0 0;
-
-  color: var(--green);
-
-  background-color: var(--dark);
-
-  padding: 25px;
-}
-
-.guitar-text {
-  line-height: 1.5;
-
-  padding: 0 15px;
-
-  @media (min-width: $sm) {
-    padding: 0;
-  }
-}
+@import '../../../assets/styles/variables';
 
 .guitar-gallery-wrapper {
   display: grid;

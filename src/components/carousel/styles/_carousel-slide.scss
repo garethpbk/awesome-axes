@@ -1,0 +1,86 @@
+@import '../../../assets/styles/variables';
+
+.carousel-slide {
+  position: relative;
+
+  height: 100%;
+  width: 50%;
+
+  color: white;
+  font-size: 5rem;
+
+  border-bottom: 2px solid var(--dark);
+
+  display: inline-block;
+
+  transition: transform 0.25s ease-in-out;
+  transform-style: preserve-3d;
+
+  overflow: hidden;
+
+  &:not(.current) {
+    filter: saturate(10%);
+  }
+
+  &:hover {
+    .carousel-slide-overlay {
+      bottom: 0px;
+    }
+  }
+
+  a {
+    display: block;
+
+    height: 100%;
+    width: 100%;
+
+    position: relative;
+  }
+
+  img {
+    width: 100%;
+
+    vertical-align: top;
+  }
+}
+
+.carousel-slide-overlay {
+  position: absolute;
+  bottom: -200px;
+
+  background-color: rgba(0, 0, 0, 0.9);
+
+  text-align: center;
+
+  white-space: pre-wrap;
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  transition: bottom 0.35s linear;
+
+  h2,
+  p {
+    color: var(--green);
+  }
+
+  h2 {
+    padding: 10px 0;
+
+    font-size: 2.4rem;
+
+    @media (min-width: $md) {
+      padding: 25px 0;
+
+      font-size: 3rem;
+    }
+
+    @media (min-width: $lg) {
+      font-size: 3.6rem;
+    }
+  }
+}
