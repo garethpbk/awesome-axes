@@ -5,8 +5,8 @@ import './styles/main.scss';
 // import components
 import GuitarGallery from './GuitarGallery';
 
-function Guitar({ guitars, location, setHeaderHeight }) {
-  const path = location.pathname.replace('/guitars/', '').replace('/', '');
+function Guitar({ guitars, location: { pathname, state: locationState }, setHeaderHeight }) {
+  const path = pathname.replace('/guitars/', '').replace('/', '');
 
   const guitarToRender = guitars
     .filter(guitar => guitar.name.toLowerCase().replace(/ /g, '-') === path)
@@ -14,7 +14,9 @@ function Guitar({ guitars, location, setHeaderHeight }) {
 
   const { gallery, name, text } = guitarToRender;
 
-  const [activeImage, setActiveImage] = useState(gallery[0].src);
+  const [activeImage, setActiveImage] = useState(
+    locationState && locationState.guitarImage ? locationState.guitarImage : gallery[0].src
+  );
 
   // useLayoutEffect instead of useEffect to prevent flash of full-height header before DOM fully rendered
   useLayoutEffect(() => {
@@ -29,7 +31,7 @@ function Guitar({ guitars, location, setHeaderHeight }) {
         </span>
         <img src={activeImage} alt={name} />
         <GuitarGallery activeImage={activeImage} gallery={gallery} name={name} setActiveImage={setActiveImage} />
-        <h2 className="guitar-title">{name}</h2>
+        <h2 className="fancy-title">{name}</h2>
         <div className="guitar-text" dangerouslySetInnerHTML={{ __html: text }} />
       </div>
     </div>

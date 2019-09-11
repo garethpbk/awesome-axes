@@ -33,3 +33,18 @@
 
   white-space: nowrap;
 }
+
+.carousel-guitars-link {
+  display: flex;
+  justify-content: center;
+
+  padding: 50px 0;
+
+  a {
+    &:hover {
+      h2 {
+        text-decoration: underline;
+      }
+    }
+  }
+}

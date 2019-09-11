@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from '@reach/router';
 import './styles/main.scss';
 
 // import components
@@ -78,6 +79,11 @@ function Carousel({ guitars, setHeaderHeight }) {
       </section>
       <span className="carousel-control right" onClick={advanceSlide} />
       <CarouselSelect changeSlide={changeSlide} current={current} guitars={guitars} isCurrent={isCurrent} />
+      <div className="carousel-guitars-link">
+        <Link to="/guitars">
+          <h2 className="fancy-title">View All Guitars</h2>
+        </Link>
+      </div>
     </div>
   );
 }
