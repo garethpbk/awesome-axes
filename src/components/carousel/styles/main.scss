@@ -1,3 +1,5 @@
-@import './_carousel-base';
-@import './carousel-controls';
-@import './_carousel-slide';
+@import '../../../assets/styles/_variables';
+
+@import '_carousel-base';
+@import 'carousel-controls';
+@import '_carousel-slide';
