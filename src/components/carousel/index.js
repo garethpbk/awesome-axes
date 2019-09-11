@@ -1,17 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from '@reach/router';
 import './styles.scss';
 
-// import icons
-import { ReactComponent as AcousticGuitarIcon } from '../../assets/images/svg/acoustic-guitar-icon.svg';
-import { ReactComponent as AmplifierIcon } from '../../assets/images/svg/amplifier-icon.svg';
-import { ReactComponent as ElectricGuitarIcon } from '../../assets/images/svg/electric-guitar-icon.svg';
-
-const icons = {
-  acousticGuitarIcon: <AcousticGuitarIcon />,
-  amplifierIcon: <AmplifierIcon />,
-  electricGuitarIcon: <ElectricGuitarIcon />,
-};
+// import components
+import CarouselSelect from './CarouselSelect';
+import CarouselSlide from './CarouselSlide';
 
 function isCurrent(current, i) {
   if (current === i) return ' current';
@@ -80,30 +72,12 @@ function Carousel({ guitars, setHeaderHeight }) {
           }}
         >
           {slidesWithClones.map((slide, i) => (
-            <li key={`slide-${i}`} className={`carousel-slide${isCurrent(current, i)}`}>
-              <Link to={`guitars/${slide.name.toLowerCase().replace(/ /g, '-')}`}>
-                <img src={slide.image} alt={slide.name} />
-                <div className="carousel-slide-overlay">
-                  <h2>{slide.name}</h2>
-                  <p>{slide.description}</p>
-                </div>
-              </Link>
-            </li>
+            <CarouselSlide current={current} i={i} isCurrent={isCurrent} slide={slide} />
           ))}
         </ul>
       </section>
       <span className="carousel-control right" onClick={advanceSlide} />
-      <div className="carousel-select">
-        {guitars.map((slide, i) => (
-          <span
-            key={`slide-control-${i}`}
-            className={`carousel-selector${isCurrent(current, i + 2)}`}
-            onClick={() => changeSlide(i + 2)}
-          >
-            {icons[slide.icon]}
-          </span>
-        ))}
-      </div>
+      <CarouselSelect changeSlide={changeSlide} current={current} guitars={guitars} isCurrent={isCurrent} />
     </div>
   );
 }
