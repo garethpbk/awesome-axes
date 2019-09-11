@@ -72,7 +72,7 @@ function Carousel({ guitars, setHeaderHeight }) {
           }}
         >
           {slidesWithClones.map((slide, i) => (
-            <CarouselSlide current={current} i={i} isCurrent={isCurrent} slide={slide} />
+            <CarouselSlide key={`slide=${i}`} current={current} i={i} isCurrent={isCurrent} slide={slide} />
           ))}
         </ul>
       </section>

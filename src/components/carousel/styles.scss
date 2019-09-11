@@ -119,6 +119,8 @@
 
 .carousel-control,
 .carousel-selector {
+  box-sizing: content-box;
+
   cursor: pointer;
 }
 

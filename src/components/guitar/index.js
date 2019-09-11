@@ -1,6 +1,9 @@
-import React, { useLayoutEffect } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import { Link } from '@reach/router';
 import './styles.scss';
+
+// import components
+import GuitarGallery from './GuitarGallery';
 
 function Guitar({ guitars, location, setHeaderHeight }) {
   const path = location.pathname.replace('/guitars/', '').replace('/', '');
@@ -9,8 +12,11 @@ function Guitar({ guitars, location, setHeaderHeight }) {
     .filter(guitar => guitar.name.toLowerCase().replace(/ /g, '-') === path)
     .reduce(guitar => guitar);
 
-  const { image, name, text } = guitarToRender;
+  const { gallery, image, name, text } = guitarToRender;
 
+  const [activeImage, setActiveImage] = useState(image);
+
+  // useLayoutEffect instead of useEffect to prevent flash of full-height header before DOM fully rendered
   useLayoutEffect(() => {
     setHeaderHeight('header-short');
   }, [setHeaderHeight]);
@@ -21,7 +27,8 @@ function Guitar({ guitars, location, setHeaderHeight }) {
         <span className="guitar-crumbs">
           <Link to="/guitars">Guitars</Link> / {name}
         </span>
-        <img src={image} alt={name} />
+        <img src={activeImage} alt={name} />
+        <GuitarGallery activeImage={activeImage} gallery={gallery} name={name} setActiveImage={setActiveImage} />
         <h2 className="guitar-title">{name}</h2>
         <div className="guitar-text" dangerouslySetInnerHTML={{ __html: text }} />
       </div>

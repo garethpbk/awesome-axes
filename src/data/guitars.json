@@ -1,6 +1,13 @@
 [
   {
     "image": "/guitars/acoustic-guitar/acoustic-guitar.jpg",
+    "gallery": [
+      { "alt": "normal", "src": "/guitars/acoustic-guitar/acoustic-guitar.jpg" },
+      { "alt": "blur", "src": "/guitars/acoustic-guitar/acoustic-guitar-blur.jpg" },
+      { "alt": "inverted", "src": "/guitars/acoustic-guitar/acoustic-guitar-inverted.jpg" },
+      { "alt": "pixel", "src": "/guitars/acoustic-guitar/acoustic-guitar-pixel.jpg" },
+      { "alt": "ripple", "src": "/guitars/acoustic-guitar/acoustic-guitar-ripple.jpg" }
+    ],
     "name": "Acoustic Guitar",
     "description": "Play some nice chords on this wooden thing.",
     "icon": "acousticGuitarIcon",
