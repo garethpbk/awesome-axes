@@ -1,6 +1,9 @@
 import React, { useLayoutEffect, useState } from 'react';
 import './styles.scss';
 
+// import hooks
+import useSetTitle from '../../hooks/useSetTitle';
+
 // import components
 import GuitarEntry from './GuitarEntry';
 
@@ -9,6 +12,8 @@ function Guitars({ guitars, setHeaderHeight }) {
   useLayoutEffect(() => {
     setHeaderHeight('header-short');
   }, [setHeaderHeight]);
+
+  useSetTitle('Guitars');
 
   const [hoveredGuitar, setHoveredGuitar] = useState(null);
 

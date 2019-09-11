@@ -2,6 +2,9 @@ import React, { useLayoutEffect, useState } from 'react';
 import { Link } from '@reach/router';
 import './styles/main.scss';
 
+// import hooks
+import useSetTitle from '../../hooks/useSetTitle';
+
 // import components
 import GuitarGallery from './GuitarGallery';
 
@@ -13,6 +16,8 @@ function Guitar({ guitars, location: { pathname, state: locationState }, setHead
     .reduce(guitar => guitar);
 
   const { gallery, name, text } = guitarToRender;
+
+  useSetTitle(name);
 
   const [activeImage, setActiveImage] = useState(
     locationState && locationState.guitarImage ? locationState.guitarImage : gallery[0].src

@@ -2,7 +2,12 @@ import React from 'react';
 import { Link } from '@reach/router';
 import './styles.scss';
 
+// import hooks
+import useSetTitle from '../../hooks/useSetTitle';
+
 function FourOhFour() {
+  useSetTitle('Ohhh Nooooo');
+
   return (
     <div className="four-oh-four-wrapper">
       <div className="container">

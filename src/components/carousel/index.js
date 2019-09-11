@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { Link } from '@reach/router';
 import './styles/main.scss';
 
+// import hooks
+import useSetTitle from '../../hooks/useSetTitle';
+
 // import components
 import CarouselSelect from './CarouselSelect';
 import CarouselSlide from './CarouselSlide';
@@ -20,6 +23,8 @@ function Carousel({ guitars, setHeaderHeight }) {
   useEffect(() => {
     setHeaderHeight('header-full');
   }, [setHeaderHeight]);
+
+  useSetTitle('Home');
 
   // add a clone of first 2 and last 2 slides for seamless transition from first to last or last to first slide
   const slidesWithClones = [
