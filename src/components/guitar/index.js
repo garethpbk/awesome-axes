@@ -11,9 +11,16 @@ import GuitarGallery from './GuitarGallery';
 function Guitar({ guitars, location: { pathname, state: locationState }, setHeaderHeight }) {
   const path = pathname.replace('/guitars/', '').replace('/', '');
 
-  const guitarToRender = guitars
-    .filter(guitar => guitar.name.toLowerCase().replace(/ /g, '-') === path)
-    .reduce(guitar => guitar);
+  const matchedGuitar = guitars.filter(guitar => guitar.name.toLowerCase().replace(/ /g, '-') === path);
+
+  const guitarToRender =
+    matchedGuitar.length === 0
+      ? {
+          gallery: [{ src: '/sad.jpg', alt: 'ohh noooo' }],
+          name: 'No Guitar Found',
+          text: '<p>Ohhh nooo</p><p><a href="/">Please click here to return home.</a></p>',
+        }
+      : matchedGuitar.reduce(guitar => guitar);
 
   const { gallery, name, text } = guitarToRender;
 

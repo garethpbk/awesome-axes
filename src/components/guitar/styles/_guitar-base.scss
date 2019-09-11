@@ -1,5 +1,12 @@
 @import '../../../assets/styles/variables';
 
+.guitar-wrapper,
+.guitar-crumbs {
+  a {
+    color: var(--dark);
+  }
+}
+
 .guitar-wrapper {
   padding: 25px 0;
 }
@@ -11,10 +18,6 @@
 
   @media (min-width: $sm) {
     padding: 0 0 25px 0;
-  }
-
-  a {
-    color: var(--dark);
   }
 }
 
