@@ -22,7 +22,7 @@ Netlify is a good choice. Is deployed at [https://awesome-axes.netlify.com/](htt
 
 - Github svg icon from Github
 
-- All images of guitars & amp from Google search set to "use for commercial re-use with modification." Modified by the author with the magic of Photoshop.
+- All images of guitars & amp from Google search set to "labelled for noncommercial reuse with modification." Modified by the author with the magic of Photoshop.
 
 - Lorum ipsum text from [https://www.lipsum.com/](https://www.lipsum.com/)
 
