@@ -12,9 +12,9 @@ function Guitar({ guitars, location, setHeaderHeight }) {
     .filter(guitar => guitar.name.toLowerCase().replace(/ /g, '-') === path)
     .reduce(guitar => guitar);
 
-  const { gallery, image, name, text } = guitarToRender;
+  const { gallery, name, text } = guitarToRender;
 
-  const [activeImage, setActiveImage] = useState(image);
+  const [activeImage, setActiveImage] = useState(gallery[0].src);
 
   // useLayoutEffect instead of useEffect to prevent flash of full-height header before DOM fully rendered
   useLayoutEffect(() => {
